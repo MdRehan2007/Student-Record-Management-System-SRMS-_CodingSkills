@@ -2,7 +2,7 @@
 Student Record Management System Description 
 
 📘 Header Files & Constants
-
+--------------------------------------------------------------------------------------------------------
 This section contains the required libraries and fixed constants used across the project.
 
 #include <stdio.h> — Standard input/output
@@ -14,10 +14,9 @@ This section contains the required libraries and fixed constants used across the
 📁 STUDENT_FILE — Stores all student information
 
 🔑 CREDENTIAL_FILE — Stores usernames, passwords, and roles
-------------------------------------------------------------------------------------------------------------------
 
 🔐 Login Function
-
+--------------------------------------------------------------------------------------------------------
 This function handles the entire authentication process.
 
 Prompts for username and password
@@ -31,7 +30,7 @@ Sets currentUser & currentRole when correct
 Returns 1 if success, 0 if login fails
 
 🧭 Main Menu Controller
-
+--------------------------------------------------------------------------------------------------------
 Directs the user to the correct menu based on role.
 
 Checks the role (ADMIN / STAFF / USER / GUEST)
@@ -41,6 +40,7 @@ Loads respective menu
 Ensures restricted access for lower roles
 
 👑 Admin Menu
+--------------------------------------------------------------------------------------------------------
 
 Admin has full privileges in the system.
 
@@ -57,6 +57,7 @@ Admin has full privileges in the system.
 🚪 Logout
 
 👤 User Menu
+--------------------------------------------------------------------------------------------------------
 
 User has limited access.
 
@@ -67,6 +68,7 @@ User has limited access.
 🚪 Logout
 
 👨‍🏫 Staff Menu
+--------------------------------------------------------------------------------------------------------
 
 Similar to User with viewing options.
 
@@ -77,6 +79,7 @@ Similar to User with viewing options.
 🚪 Logout
 
 👁️ Guest Menu
+--------------------------------------------------------------------------------------------------------
 
 Guest can only view records.
 
@@ -97,7 +100,7 @@ Shows “Student added successfully!”
 ❗ Used only by Admin
 
 📋 Display Students Function
-
+--------------------------------------------------------------------------------------------------------
 Shows all stored student records.
 
 Opens file in read mode
@@ -107,6 +110,7 @@ Prints Roll, Name, Marks for each record
 If no file found → prints “No students found”
 
 🔍 Search Student Function
+--------------------------------------------------------------------------------------------------------
 
 Searches for a student using roll number.
 
@@ -119,6 +123,7 @@ If matched → Displays Name + Marks
 If not → Shows “Student not found”
 
 ✏️ Update Student Function
+--------------------------------------------------------------------------------------------------------
 
 Modifies an existing record safely.
 
@@ -131,8 +136,9 @@ Updates only the matched student
 Replaces old file with updated data
 
 🔐 Admin only
-
+--------------------------------------------------------------------------------------------------------
 🗑️ Delete Student Function
+--------------------------------------------------------------------------------------------------------
 
 Deletes a student permanently.
 
@@ -151,6 +157,7 @@ Replaces original file
 Controls the entire execution order.
 
 Login
+--------------------------------------------------------------------------------------------------------
 
 Show menu based on role
 
