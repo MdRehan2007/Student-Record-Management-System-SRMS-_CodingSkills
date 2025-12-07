@@ -1,112 +1,17 @@
 # Student-Record-Management-System-SRMS-_CodingSkills
 Student Record Management System Description 
 
-<table> <tr> <td>
-📌 Header Files & Constants
+<style> /* Github ignores actual CSS, but boxes still look modern via HTML + markdown layout */ </style> <br>
+🚀 Code Explanation – Module Overview
+<table> <tr> <td width="50%"> <h3>📁 Header Files & Constants</h3> <div> ✔️ `stdio.h` – Input/Output operations ✔️ `stdlib.h` – Memory, process control ✔️ `string.h` – String operations
 
-The program uses three important C libraries:
+Constants Used:
 
-stdio.h → Input/Output
+STUDENT_FILE → Path to student data
 
-stdlib.h → Memory & system functions
+CREDENTIAL_FILE → Path to login data
 
-string.h → String handling
-
-Constants defined:
-
-STUDENT_FILE → Path to student records
-
-CREDENTIAL_FILE → Path to login credentials
-
-</td> <td>
-🔐 Login Function
-
-The login system:
-
-Prompts for username & password
-
-Reads from credentials.txt
-
-Compares input with stored values
-
-Sets currentRole and currentUser
-
-Returns 1 for success, 0 for failure
-
-</td> </tr> <tr> <td>
-➕ Add Student Function
-
-This function:
-
-Takes Roll, Name, Marks
-
-Opens students.txt in append mode
-
-Stores the new record
-
-Prints success message
-
-</td> <td>
-📋 Display Students Function
-
-This function:
-
-Opens file in read mode
-
-Reads each student record
-
-Prints Roll, Name, Marks in table format
-
-Handles empty file case
-
-</td> </tr> <tr> <td>
-🔍 Search Student Function
-
-Searches student by roll number:
-
-Reads each record
-
-Compares roll number
-
-Shows details if found
-
-Displays “Not Found” message if missing
-
-</td> <td>
-✏️ Update Student Function
-
-Updates an existing record:
-
-Creates temp.txt
-
-Copies all records
-
-Updates matching student
-
-Replaces old file with updated version
-
-</td> </tr> <tr> <td>
-🗑️ Delete Student Function
-
-Deletes a record:
-
-Creates temporary file
-
-Copies all records except the target
-
-Deletes original file
-
-Renames temp.txt to students.txt
-
-</td> <td>
-🧠 Main Function
-
-Controls the entire program:
-
-Calls loginSystem()
-
-Redirects user to correct menu
-
-Exits if login fails
-
-</td> </tr> </table>
+</div> </td> <td width="50%"> <h3>🔐 Login Function</h3> <div> ✔️ Reads username & password ✔️ Opens `credentials.txt` ✔️ Matches input with stored data ✔️ Sets `currentUser` & `currentRole` ✔️ Returns **1** (success) or **0** (fail) </div> </td> </tr> </table>
+<table> <tr> <td width="50%"> <h3>➕ Add Student Function</h3> <div> - Reads **Roll, Name, Marks** - Appends to `students.txt` - Saves in structured format - Prints confirmation message </div> </td> <td width="50%"> <h3>📋 Display Students Function</h3> <div> - Opens students file - Prints table view - Displays roll, name, marks - Handles empty file case </div> </td> </tr> </table>
+<table> <tr> <td width="50%"> <h3>🔍 Search Student Function</h3> <div> - Prompts for roll number - Searches each entry - Shows result if match found - Otherwise displays “Not Found” </div> </td> <td width="50%"> <h3>✏️ Update Student Function</h3> <div> - Creates `temp.txt` - Copies all records - Updates matched record - Replaces original file </div> </td> </tr> </table>
+<table> <tr> <td width="50%"> <h3>🗑️ Delete Student Function</h3> <div> - Asks for roll to delete - Skips matched record - Writes all others to `temp.txt` - Replaces `students.txt` </div> </td> <td width="50%"> <h3>🧠 Main Function</h3> <div> - Calls login system - Displays correct role menu - Runs until user logs out - Ends program safely </div> </td> </tr> </table>
