@@ -14,6 +14,7 @@ This section contains the required libraries and fixed constants used across the
 📁 STUDENT_FILE — Stores all student information
 
 🔑 CREDENTIAL_FILE — Stores usernames, passwords, and roles
+------------------------------------------------------------------------------------------------------------------
 
 🔐 Login Function
 
