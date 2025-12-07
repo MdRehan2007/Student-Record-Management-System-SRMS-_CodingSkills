@@ -48,7 +48,7 @@ int loginSystem() {
     FILE *fp = fopen(CREDENTIAL_FILE, "r");
     if(!fp) {
         printf("Error: credentials.txt not found!\n");
-        return 0;
+        return 1;
     }
 
     while(fscanf(fp, "%s %s %s", fileUser, filePass, fileRole) == 3) {
@@ -274,4 +274,5 @@ void deleteStudent() {
 
     if(found) printf("Student deleted successfully!\n");
     else printf("Student with Roll %d not found.\n", roll);
+
 }
