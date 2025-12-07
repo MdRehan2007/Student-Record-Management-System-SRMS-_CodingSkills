@@ -1,110 +1,161 @@
 # Student-Record-Management-System-SRMS-_CodingSkills
 Student Record Management System Description 
 
-Header Files & Constants
+📘 Header Files & Constants
 
-Description:
-The program starts by importing the required C libraries and defining constants used throughout the system.
+This section contains the required libraries and fixed constants used across the project.
 
-stdio.h – Input/Output
+#include <stdio.h> — Standard input/output
 
-stdlib.h – File handling and memory
+#include <stdlib.h> — File handling & utilities
 
-string.h – String comparison & manipulation
+#include <string.h> — String comparison & manipulation
 
-STUDENT_FILE – Stores all student records
+📁 STUDENT_FILE — Stores all student information
 
-CREDENTIAL_FILE – Stores login information
+🔑 CREDENTIAL_FILE — Stores usernames, passwords, and roles
 
-🔑 Login Function
+🔐 Login Function
 
-Handles user authentication and role detection.
+This function handles the entire authentication process.
 
-Prompts for username & password
+Prompts for username and password
 
-Reads credentials.txt
+Reads credentials from credentials.txt
 
-Compares credentials
+Compares user input with stored data
 
-Sets currentUser and currentRole
+Sets currentUser & currentRole when correct
 
-Returns 1 (success) or 0 (fail)
+Returns 1 if success, 0 if login fails
 
-📋 Add Student Function
+🧭 Main Menu Controller
 
-Adds a new student record to the system.
+Directs the user to the correct menu based on role.
 
-Takes roll number, name, marks
+Checks the role (ADMIN / STAFF / USER / GUEST)
 
-Opens file in append mode
+Loads respective menu
 
-Writes record into students.txt
+Ensures restricted access for lower roles
 
-Confirms successful addition
+👑 Admin Menu
 
-🟦 Two-Column UI Cards (Like Your Pictures)
-<table> <tr> <td width="50%">
-🖥️ Display Students Function
+Admin has full privileges in the system.
 
-Shows all stored student records in tabular format.
+➕ Add Student
 
-Opens students.txt
+📋 Display Students
 
-Reads each record
+🔍 Search Student
 
-Displays Roll, Name, Marks
+✏️ Update Student
 
-Handles empty file case
+🗑️ Delete Student
 
-</td> <td width="50%">
+🚪 Logout
+
+👤 User Menu
+
+User has limited access.
+
+📋 Display Students
+
+🔍 Search Student
+
+🚪 Logout
+
+👨‍🏫 Staff Menu
+
+Similar to User with viewing options.
+
+📋 Display Students
+
+🔍 Search Student
+
+🚪 Logout
+
+👁️ Guest Menu
+
+Guest can only view records.
+
+📋 Display Students
+
+🚪 Logout
+
+➕ Add Student Function
+
+Adds a new student entry to the database.
+
+Takes Roll No, Name, Marks
+
+Appends data to students.txt
+
+Shows “Student added successfully!”
+
+❗ Used only by Admin
+
+📋 Display Students Function
+
+Shows all stored student records.
+
+Opens file in read mode
+
+Prints Roll, Name, Marks for each record
+
+If no file found → prints “No students found”
+
 🔍 Search Student Function
 
-Finds a specific student using roll number.
+Searches for a student using roll number.
 
-Prompts for roll number
+Asks for roll number
 
-Scans each record
+Compares with each entry
 
-Displays details if found
+If matched → Displays Name + Marks
 
-Prints message if not found
+If not → Shows “Student not found”
 
-</td> </tr> </table>
-<table> <tr> <td width="50%">
 ✏️ Update Student Function
 
-Modifies existing student information.
+Modifies an existing record safely.
 
-Creates temporary file
+Creates a temporary file
 
-Copies all records
+Copies all data
 
-Updates only matching roll number
+Updates only the matched student
 
-Replaces old file with updated copy
+Replaces old file with updated data
 
-</td> <td width="50%">
+🔐 Admin only
+
 🗑️ Delete Student Function
 
 Deletes a student permanently.
 
-Asks roll number
+Asks for roll number
 
 Skips matching record while copying
 
-Rewrites remaining data
+Writes all others into a temp file
 
 Replaces original file
 
-</td> </tr> </table>
-🧭 Main Function
+🛑 Admin only
 
-Controls the entire program flow.
+🧠 Main Program Flow
 
-Starts login process
+Controls the entire execution order.
 
-Calls correct menu by role
+Login
 
-Performs user-selected operation
+Show menu based on role
 
-Ends when user logs out
+Execute selected operations
+
+Loop until logout
+
+Program ends gracefully
+
