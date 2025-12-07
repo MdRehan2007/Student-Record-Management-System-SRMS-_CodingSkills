@@ -1,134 +1,110 @@
 # Student-Record-Management-System-SRMS-_CodingSkills
 Student Record Management System Description 
 
+Header Files & Constants
 
-1. Header Files & Global Setup
+Description:
+The program starts by importing the required C libraries and defining constants used throughout the system.
 
-This section includes the basic libraries required for input/output, memory handling, and string operations.
-It also defines two important constants:
+stdio.h – Input/Output
 
-STUDENT_FILE → File where all student records are stored
+stdlib.h – File handling and memory
 
-CREDENTIAL_FILE → File containing usernames, passwords, and roles
+string.h – String comparison & manipulation
 
-These definitions make the file handling easier and keep the code organized.
+STUDENT_FILE – Stores all student records
 
-🔹 2. Login System
+CREDENTIAL_FILE – Stores login information
 
-The login system is the first part executed.
-It performs:
+🔑 Login Function
 
-Reading username and password from the user
+Handles user authentication and role detection.
 
-Opening credentials.txt
+Prompts for username & password
 
-Comparing the input with stored credentials
+Reads credentials.txt
 
-Setting the current role (ADMIN, USER, STAFF, GUEST)
+Compares credentials
 
-If the login matches → system allows access
-If not → “Access Denied”
+Sets currentUser and currentRole
 
-This ensures basic security and restricted access.
+Returns 1 (success) or 0 (fail)
 
-🔹 3. Role-Based Menus
+📋 Add Student Function
 
-Once login is successful, the program redirects the user to the correct menu:
+Adds a new student record to the system.
 
-✔ ADMIN
-
-Full access: Add, Display, Search, Update, Delete
-
-✔ STAFF
-
-Can only Display and Search
-
-✔ USER
-
-Can Display and Search
-
-✔ GUEST
-
-Can only Display
-
-Each menu is shown in a loop until the user logs out.
-
-🔹 4. Add Student
-
-This function:
-
-Asks Roll No, Name, Marks
+Takes roll number, name, marks
 
 Opens file in append mode
 
-Writes the new student record
+Writes record into students.txt
 
 Confirms successful addition
 
-It updates the student database without affecting old records.
+🟦 Two-Column UI Cards (Like Your Pictures)
+<table> <tr> <td width="50%">
+🖥️ Display Students Function
 
-🔹 5. Display Students
-
-Displays all student records in a clean table-like format.
-It:
+Shows all stored student records in tabular format.
 
 Opens students.txt
 
 Reads each record
 
-Prints Roll, Name, Marks
+Displays Roll, Name, Marks
 
-Shows a message if file is empty
+Handles empty file case
 
-This is mainly used by Admin, User, Staff, and Guest.
+</td> <td width="50%">
+🔍 Search Student Function
 
-🔹 6. Search Student
+Finds a specific student using roll number.
 
-This function:
+Prompts for roll number
 
-Asks for roll number
+Scans each record
 
-Searches file line by line
+Displays details if found
 
-If found → prints name & marks
+Prints message if not found
 
-If not → shows “Not Found”
+</td> </tr> </table>
+<table> <tr> <td width="50%">
+✏️ Update Student Function
 
-Used often by users who want quick lookup.
+Modifies existing student information.
 
-🔹 7. Update Student
+Creates temporary file
 
-To update a record:
+Copies all records
 
-Reads all records one by one
+Updates only matching roll number
 
-Copies them into a temporary file
+Replaces old file with updated copy
 
-Replaces the matching record with new data
+</td> <td width="50%">
+🗑️ Delete Student Function
 
-Deletes old file
+Deletes a student permanently.
 
-Renames new file
+Asks roll number
 
-This ensures safe updating without corruption.
+Skips matching record while copying
 
-🔹 8. Delete Student
+Rewrites remaining data
 
-Very similar to update, but instead of modifying, it skips the record matching the roll number.
-Finally creates a fresh file without the deleted data.
+Replaces original file
 
-Admin-only feature.
+</td> </tr> </table>
+🧭 Main Function
 
-🔹 9. Main Function
+Controls the entire program flow.
 
-This is the control center:
+Starts login process
 
-Starts login
+Calls correct menu by role
 
-Shows correct menu
-
-Performs operations according to role
+Performs user-selected operation
 
 Ends when user logs out
-
-This keeps the full program flow controlled and stable
